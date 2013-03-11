@@ -22,7 +22,7 @@ MIT-style license: http://pipwerks.mit-license.org/
 
 Notes:
 
-* Works with Adobe Captivate 2, 3, 4, 5, 5.5
+* Works with Adobe Captivate 2, 3, 4, 5, 5.5, 6
 
 * When examining data type (typeof) of variable returned via
   ExternalInterface, Internet Explorer returns proprietary
@@ -324,6 +324,10 @@ var CaptivateController = function (swfID, usesExternalSkin){
     var getInfo = function (param, query_external_skin){
 
         if(!isCaptivateSWF()){ return FALSE; }
+
+        if(version === 6){
+            param = "m_VarHandle."+param //for Captivate 6
+        }
 
         //debug("querying " +param);
 
