@@ -15,7 +15,7 @@ function debug(text) {
 
 /* ======================================================
 
-CaptivateController() v0.9.20111220
+CaptivateController() v0.10.20120311
 https://github.com/pipwerks/CaptivateController
 Copyright (c) Philip Hutchison
 MIT-style license: http://pipwerks.mit-license.org/
