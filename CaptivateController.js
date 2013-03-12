@@ -324,9 +324,10 @@ var CaptivateController = function (swfID, usesExternalSkin){
     var getInfo = function (param, query_external_skin){
 
         if(!isCaptivateSWF()){ return FALSE; }
-
+        
+        // For Captivate 6
         if(version === 6){
-            param = "m_VarHandle."+param //for Captivate 6
+            param = "m_VarHandle."+param
         }
 
         //debug("querying " +param);
@@ -394,7 +395,12 @@ var CaptivateController = function (swfID, usesExternalSkin){
     var setCPVariableValue = function (param, value, query_external_skin){
 
         if(!isCaptivateSWF()){ return FALSE; }
-
+        
+        // For Captivate 6
+        if(version === 6){
+            param = "m_VarHandle."+param
+        }
+        
         var result = null,
             skin = (typeof query_external_skin !== UNDEFINED && query_external_skin) ? "" : skinPath;
 
